@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Code::Stats Chrome Extension",
+    "description": "This extension will show your current progress in https://codestats.net/ service.",
+    "version": "0.10",
+    "background": {
+        "scripts": [
+            "background/js/background.js"
+        ],
+        "persistent": false
+    },
+    "permission": ["storage"],
+    "browser_action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "images/img16.png",
+            "32": "images/img32.png",
+            "48": "images/img48.png",
+            "128": "images/img128.png"
+        }
+    },
+    "icons": {
+        "16": "images/img16.png",
+        "32": "images/img32.png",
+        "48": "images/img48.png",
+        "128": "images/img128.png"
+    },
+    "options_page": "options/options.html"
+}
