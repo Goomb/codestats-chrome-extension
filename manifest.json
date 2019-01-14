@@ -9,7 +9,7 @@
         ],
         "persistent": false
     },
-    "permission": ["storage"],
+    "permissions": ["storage"],
     "browser_action": {
         "default_popup": "popup/popup.html",
         "default_icon": {

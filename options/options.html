@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Code::Stats Chrome Extension Options</title>
+    <link rel="stylesheet" href="css/options.css">
 </head>
 <body>
-    
+    <h1>Code::Stats Chrome Extension</h1>
+    <div class="container">
+        <div>
+            <p>Enter your codestats.net login name</p>
+            <input type="text" name="name" value="" id="codestatsLogin">
+        </div>
+        <div id="buttonDiv">
+            <button id="saveButton">Save!</button>
+        </div>
+        <div id="saveMessage" class="saveMessage">
+            Succesfully saved!
+        </div>
+    </div>
     <script src="js/options.js"></script>
 </body>
 </html>
