@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(function () {
     // timers
-    const timePause = 5000;
+    let timePause = 5000;
 
     // colors
     const warningColor = "#D32F2F";
@@ -9,8 +9,11 @@ chrome.runtime.onInstalled.addListener(function () {
     // urls
     const serverUrl = "https://codestats.net/api/users/";
 
-    chrome.storage.sync.get("codestatsLogin", function (data) {
-        console.log(data);
+    chrome.storage.sync.get(["codestatsLogin", "codestatsRefreshTime"], function (data) {
+        if (typeof data.codestatsRefreshTime !== "undefined") {
+            timePause = data.codestatsRefreshTime;
+        }
+
         if (typeof data.codestatsLogin !== "undefined") {
             showStatistics(
                 serverUrl,
@@ -67,7 +70,7 @@ function showStatistics(serverUrl, userLogin, timePause, experienceColor) {
                 }
             })
             .catch(err => console.error(err));
-    }, timePause);
+    }, timePause * 1000);
 }
 
 function failedLogin(text, color) {
